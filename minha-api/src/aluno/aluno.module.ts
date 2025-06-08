@@ -1,10 +1,13 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { Aluno } from './aluno.entity';
-import { AlunoService } from './aluno.service';
+import { MongooseModule } from '@nestjs/mongoose';
 import { AlunoController } from './aluno.controller';
+import { AlunoService } from './aluno.service';
+import { AlunoSchema } from './aluno.schema';
+
 @Module({
- imports: [TypeOrmModule.forFeature([Aluno])], // <-- aqui está a mágica!
+ imports: [
+    MongooseModule.forFeature([{ name: 'Aluno', schema: AlunoSchema}])
+], 
  providers: [AlunoService],
  controllers: [AlunoController],
 })
