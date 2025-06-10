@@ -1,18 +1,18 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AlunoController } from './aluno.controller';
+import { AlunoService } from './aluno.service';
 
-describe('AlunoController', () => {
-  let controller: AlunoController;
+describe('AlunoService', () => {
+  let service: AlunoService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      controllers: [AlunoController],
+      providers: [AlunoService],
     }).compile();
 
-    controller = module.get<AlunoController>(AlunoController);
+    service = module.get<AlunoService>(AlunoService);
   });
 
   it('should be defined', () => {
-    expect(controller).toBeDefined();
+    expect(service).toBeDefined();
   });
 });

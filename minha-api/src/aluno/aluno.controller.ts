@@ -2,6 +2,7 @@ import { Controller, Get, Post, Put, Delete, Body, Param } from '@nestjs/common'
 import { AlunoService } from './aluno.service';
 import { Aluno } from './aluno.schema';
 
+
 @Controller('aluno')
 export class AlunoController {
  constructor(private readonly alunoService: AlunoService) {}
